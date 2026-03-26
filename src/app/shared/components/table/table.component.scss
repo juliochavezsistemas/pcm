@@ -1,0 +1,126 @@
+/* -------------------------------------------------------
+   GLOBAL RESET
+------------------------------------------------------- */
+// *, ::before, ::after {
+//     box-sizing: border-box;
+//     border-width: 0;
+//     border-style: solid;
+//     border-color: transparent;
+// }
+
+/* -------------------------------------------------------
+   TABLA PRINCIPAL
+------------------------------------------------------- */
+/* Fila par - naranja muy tenue */
+.p-datatable-striped .p-datatable-row-even {
+    background-color: #e6f4fb !important;
+}
+
+/* Fila impar */
+.p-datatable-striped .p-datatable-row-odd {
+    background-color: #ffffff !important;
+}
+
+/* Hover general de fila */
+.p-datatable tbody tr:hover {
+    background-color: #cfeaf7 !important;
+    /* más intenso en hover */
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+/* Encabezados más definidos */
+.p-datatable thead th {
+    padding: 0.75rem 0.5rem;
+    background-color: #e6f4fb !important;
+    color: #3e3e3e;
+    font-weight: 600;
+    border-bottom: 1.5px solid var(--primary);
+}
+
+/* Ajuste celda */
+.p-datatable tbody td {
+    padding: 0.55rem;
+}
+
+/* Mejor separación visual */
+.card-table {
+    background-color: white;
+    border-radius: 8px;
+    padding: 0.3rem;
+    border: 1px solid #ececec;
+}
+
+/* -------------------------------------------------------
+   BOTONES ACCIONES PEQUEÑOS
+------------------------------------------------------- */
+
+.item-button-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--primary);
+    border-radius: 6px;
+    color: var(--primary);
+    width: 2.6rem;
+    height: 2.6rem;
+    transition: all .2s ease-in-out;
+    opacity: 0.9;
+}
+
+.item-button-action:hover {
+    background-color: var(--primary);
+    color: white;
+    cursor: pointer;
+    transform: scale(1.04);
+}
+
+/* -------------------------------------------------------
+   BOTÓN TABLA (los que tienen iconitos)
+------------------------------------------------------- */
+
+.button-table {
+    color: inherit;
+    opacity: 0.75;
+    transition: all .2s ease-in-out;
+}
+
+.button-table i {
+    color: currentColor !important;
+}
+
+.button-table:hover {
+    opacity: 1;
+    color: var(--primary);
+}
+
+.button-table:hover i {
+    transform: scale(1.15);
+}
+
+/* -------------------------------------------------------
+   INPUT THEMATIC
+------------------------------------------------------- */
+
+.input-themed {
+    border-radius: 6px;
+    height: 42px;
+}
+
+/* color base del input */
+// :host ::ng-deep input.p-inputtext {
+//     border-width: 1px !important;
+//     border-color: #d1d5db !important; /* gris suave */
+//     transition: border-color .2s ease-in-out, box-shadow .2s ease-in-out;
+// }
+
+// /* hover */
+// :host ::ng-deep input.p-inputtext:hover {
+//     border-color: var(--primary) !important;
+// }
+
+// /* focus */
+// :host ::ng-deep input.p-inputtext:focus {
+//     border-color: var(--primary) !important;
+//     box-shadow: 0 0 0 2px rgba(255, 115, 0, 0.35); /* degrade naranja */
+// }

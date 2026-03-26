@@ -1,0 +1,354 @@
+/* You can add global styles to this file, and also import other style files */
+@use "bootstrap-icons/font/bootstrap-icons";
+@import "primeicons/primeicons.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+    font-size: inherit;
+    list-style-type: none;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+html {
+    min-height: 100vh;
+    font-size: var(--font-size);
+    font-family: var(--font-family-base);
+}
+
+ul,
+ol {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Selector amplio que cubre varias versiones de PrimeNG y también tablas normales */
+.tabla-naranja tbody tr:nth-child(even) {
+    background-color: #e6f4fb !important;
+}
+
+.tabla-naranja tbody tr:nth-child(odd) {
+    background-color: #ffffff !important;
+}
+
+// /* Quitar líneas verticales */
+// .tabla-naranja table,
+// .tabla-naranja th,
+// .tabla-naranja td {
+//     border-left: none !important;
+//     border-right: none !important;
+// }
+
+.tabla-naranja .p-datatable-tbody>tr>td,
+.tabla-naranja .p-datatable-thead>tr>th {
+    border-top: none !important;
+    border-bottom: none !important;
+}
+
+Re
+
+/* Si PrimeNG agrega bordes por clases internas */
+.tabla-naranja .p-datatable-tbody>tr>td,
+.tabla-naranja .p-datatable-thead>tr>th {
+    border-left: none !important;
+    border-right: none !important;
+}
+
+/* Quitar líneas horizontales también */
+.tabla-naranja td,
+.tabla-naranja th {
+    border-top: none !important;
+    border-bottom: none !important;
+    /* sin línea horizontal */
+}
+
+.tabla-naranja td,
+.tabla-naranja th {
+    border-top: none !important;
+    border-bottom: 1px solid #eee !important;
+    /* línea horizontal sutil */
+}
+
+:root {
+    --font-size: clamp(15px, calc(0.5vw + 0.5vh), 17px);
+    --font-family-base: "Poppins", sans-serif;
+}
+
+.swal2-container {
+    z-index: 99998 !important;
+    /* overlay */
+}
+
+.swal-top-index {
+    z-index: 99999 !important;
+    /* popup */
+}
+
+:root[data-theme="dark"] {
+    --color-red: #ff6b6b;
+    --color-green: #38d9a9;
+    --color-pink: #f783ac;
+    --color-blue: #4dabf7;
+    --color-orange: #ffa94d;
+    --color-black: #ced4da;
+    --color-lilac: #da77f2;
+    --color-yellow: #ffe066;
+
+    --color-teal: #63e6be;
+    --color-indigo: #748ffc;
+    --color-gray-dark: #adb5bd;
+    --color-gray-light: #343a40;
+
+    --background-color: #121212;
+    --text-color: #f1f3f5;
+
+    --input-bg: #1e1e1e;
+    --input-txt: #ffffff;
+    --card-bg: #1c1c1c;
+
+    --text-red: #121212;
+    --text-green: #121212;
+    --text-pink: #121212;
+    --text-blue: #121212;
+    --text-orange: #121212;
+    --text-black: #121212;
+    --text-lilac: #121212;
+    --text-yellow: #121212;
+
+    --text-teal: #121212;
+    --text-indigo: #121212;
+    --text-gray-dark: #121212;
+    --text-gray-light: #ffffff;
+}
+
+:root {
+    --color-red: #e03131;
+    --color-green: #2f9e44;
+    --color-pink: #e64980;
+    --color-blue: #007cba;
+    --color-orange: #eb6630;
+    --color-black: #343a40;
+    --color-lilac: #ae3ec9;
+    --color-yellow: #fcc419;
+
+    --color-teal: #12b886;
+    --color-indigo: #3b5bdb;
+    --color-gray-dark: #495057;
+    --color-gray-light: #f1f3f5;
+
+    --background-color: #f8f9fa;
+    --text-color: #212529;
+
+    --input-bg: #ffffff;
+    --input-txt: #212529;
+    --card-bg: #ffffff;
+
+    --text-red: #ffffff;
+    --text-green: #ffffff;
+    --text-pink: #ffffff;
+    --text-blue: #ffffff;
+    --text-orange: #212529;
+    --text-black: #ffffff;
+    --text-lilac: #ffffff;
+    --text-yellow: #212529;
+
+    --text-teal: #ffffff;
+    --text-indigo: #ffffff;
+    --text-gray-dark: #ffffff;
+    --text-gray-light: #212529;
+}
+
+@mixin components_setting($primary, $secondary, $tertiary, $input-txt, $bg-color, $text-color) {
+    // custom buttons
+    --p-button-primary-background: #{$primary};
+    --p-button-primary-hover-background: #{$secondary};
+    --p-button-primary-active-background: #{$tertiary};
+
+    --p-button-primary-border-color: #{$primary};
+    --p-button-primary-hover-border-color: #{$secondary};
+    --p-button-primary-active-border-color: #{$tertiary};
+
+    --p-button-primary-color: #{$bg-color};
+    --p-button-primary-hover-color: #{$text-color};
+    --p-button-primary-active-color: #{$text-color};
+    --p-button-primary-focus-ring-color: #{$primary};
+
+    --p-button-text-primary-hover-background: #{$tertiary};
+    --p-button-text-primary-active-background: #{$secondary};
+    --p-button-text-primary-color: #{$primary};
+    // custom inputText
+    --p-inputtext-focus-border-color: #{$secondary};
+    --p-inputtext-background: #{$bg-color};
+    --p-inputtext-color: #{$input-txt};
+    // custom floatLabel
+    --p-floatlabel-active-color: #{$input-txt};
+    --p-floatlabel-focus-color: #{$primary};
+    --p-floatlabel-on-active-background: #{$bg-color};
+    --p-floatlabel-on-active-padding: 0;
+    --p-floatlabel-color: #{$input-txt};
+    //custom textArea
+    --p-textarea-focus-border-color: #{$primary};
+    --p-textarea-background: #{$bg-color};
+    --p-textarea-color: #{$input-txt};
+    //custom toggleSwitch
+    --p-toggleswitch-checked-hover-background: #{$primary};
+    --p-toggleswitch-handle-checked-hover-color: #{$primary};
+    --p-toggleswitch-focus-ring-color: #{$secondary};
+    --p-toggleswitch-checked-background: #{$secondary};
+    --p-toggleswitch-handle-checked-color: #{$secondary};
+    --p-toggleswitch-handle-checked-background: #{$bg-color};
+    --p-toggleswitch-handle-color: #{$bg-color};
+    //custom checkbox
+    --p-checkbox-checked-background: #{$primary};
+    --p-checkbox-checked-hover-background: #{$secondary};
+    --p-checkbox-checked-border-color: #{$primary};
+    --p-checkbox-checked-focus-border-color: #{$primary};
+    --p-checkbox-checked-hover-border-color: #{$secondary};
+    --p-checkbox-icon-checked-color: #{$text-color};
+    --p-checkbox-focus-ring-color: #{$tertiary};
+    //custom paginator
+    --p-paginator-nav-button-selected-background: #{$primary};
+    --p-paginator-nav-button-selected-color: #{$bg-color};
+    --p-paginator-nav-button-focus-ring-color: #{$primary};
+    --p-paginator-background: #{$bg-color};
+    --p-paginator-nav-button-color: #{$input-txt};
+    //custom select
+    --p-select-background: #{$bg-color};
+    --p-select-color: #{$input-txt};
+    --p-select-focus-border-color: #{$secondary};
+    --p-select-option-selected-focus-background: #{$primary};
+    --p-select-option-selected-background: #{$primary};
+    --p-select-option-selected-color: #{$bg-color};
+    --p-select-option-selected-focus-color: #{$bg-color};
+    //custom stepper
+    --p-stepper-step-title-active-color: #{$primary};
+    --p-stepper-step-number-active-background: #{$primary};
+    --p-stepper-step-number-active-color: #{$text-color};
+    --p-stepper-separator-active-background: #{$primary};
+    //custom table
+    --p-datatable-header-cell-background: color-mix(in srgb, var(--primary) 70%, white) !important; //Cambiar el color para variar
+    // --p-datatable-header-cell-background: #{$bg-color};
+    --p-datatable-header-cell-color: #{$bg-color};
+    --p-datatable-header-cell-hover-background: #{$secondary};
+    --p-datatable-header-cell-selected-background: #{$primary};
+    --p-datatable-header-cell-selected-background: #{$primary};
+    --p-datatable-header-cell-selected-color: #{$text-color};
+    --p-datatable-row-background: #{$bg-color};
+    --p-datatable-row-color: #{$input-txt};
+    //custom datePicker
+    --p-datepicker-dropdown-focus-ring-color: #{$tertiary};
+    --p-datepicker-date-range-selected-color: #{$primary};
+    --p-datepicker-panel-background: #{$bg-color};
+    --p-datepicker-panel-color: #{$input-txt};
+    --p-datepicker-header-background: #{$bg-color};
+    --p-datepicker-header-color: #{$input-txt};
+    --p-datepicker-date-color: #{$input-txt};
+    --p-datepicker-week-day-color: #{$input-txt};
+    --p-datepicker-select-month-color: #{$input-txt};
+    --p-datepicker-select-year-color: #{$input-txt};
+    --p-datepicker-date-selected-background: #{$primary};
+    // --p-datepicker-date-width: 100%;
+    //custom iconfield
+    --p-iconfield-icon-color: #{$primary};
+    //custom radioButton
+    --p-radiobutton-checked-hover-background: #{$primary};
+    --p-radiobutton-checked-background: #{$secondary};
+    --p-radiobutton-checked-hover-border-color: #{$primary};
+    --p-radiobutton-checked-border-color: #{$secondary};
+    --p-radiobutton-checked-focus-border-color: #{$secondary};
+    --p-radiobutton-focus-ring-color: #{$secondary};
+    //Custom panelMenu
+    --p-panelmenu-submenu-icon-focus-color: #{$primary};
+    --p-panelmenu-item-icon-color: #{$input-txt};
+    --p-panelmenu-item-color: #{$input-txt};
+
+    --p-panelmenu-panel-background: #{$bg-color};
+    --p-panelmenu-panel-color: #{$input-txt};
+    --p-panelmenu-panel-border-radius: 0;
+    --p-panelmenu-panel-first-border-width: 0;
+    --p-panelmenu-panel-last-border-width: 0;
+    --p-panelmenu-panel-border-width: 0;
+    --p-panelmenu-item-focus-background: none;
+    --p-panelmenu-item-icon-focus-color: #{$primary};
+    --p-panelmenu-item-focus-color: #{$primary};
+    --p-panelmenu-submenu-icon-color: #{$input-txt};
+    --p-panelmenu-submenu-indent: 1.5rem;
+    --p-panelmenu-gap: 0;
+    --p-panelmenu-item-padding: 8px;
+    --p-panelmenu-panel-padding: 4px;
+    //Custom dialog
+    --p-dialog-background: #{$bg-color};
+    --p-dialog-color: #{$input-txt};
+    //Custom autocomplete
+    --p-autocomplete-focus-border-color: #{$primary};
+    --p-autocomplete-option-selected-background: #{$tertiary};
+    --p-autocomplete-option-selected-focus-background: #{$secondary};
+    --p-autocomplete-option-selected-color: #{$bg-color};
+    --p-autocomplete-option-selected-focus-color: #{$bg-color};
+    //Custom fieldset
+    --p-fieldset-legend-background: transparent;
+    //Custom toolTip
+    // --p-tooltip-background: #{$text-color};
+    // --p-tooltip-color: #{$bg-color};
+    --p-tooltip-max-width: 20em;
+
+    --p-paginator-background: none; //color en el fondo del paginador
+    // --p-tabs-tab-color:#{$primary};
+    // --p-tabs-tab-active-border-color:#{$primary};
+    --p-tabs-tab-active-color:#{$primary};
+    // --p-tabs-tablist-border-color:#{$primary};
+    // --p-tabs-active-bar-height: 20px;
+    --p-tabs-active-bar-background:#{$primary};
+
+
+    .p-datepicker-input {
+        width: 100% !important;
+    }
+
+    .p-datepicker {
+        width: 100% !important;
+    }
+}
+
+@mixin generate_theme_color($name, $color, $text-color) {
+    .#{$name} {
+        --primary: var(--color-#{$name});
+        --hover: color-mix(in srgb, var(--primary) 75%, #ffffff 25%);
+        --focus: color-mix(in srgb, var(--primary) 40%, #ffffff 60%);
+        @include components_setting(var(--primary),
+            var(--hover),
+            var(--focus),
+            var(--text-color),
+            var(--background-color),
+            var(--text-#{$name}));
+    }
+}
+
+@include generate_theme_color("blue", var(--color-blue), var(--text-blue));
+@include generate_theme_color("pink", var(--color-blue), var(--text-blue));
+@include generate_theme_color("yellow", var(--color-blue), var(--text-blue));
+@include generate_theme_color("red", var(--color-blue), var(--text-blue));
+@include generate_theme_color("green", var(--color-blue), var(--text-blue));
+@include generate_theme_color("orange", var(--color-blue), var(--text-blue));
+@include generate_theme_color("black", var(--color-blue), var(--text-blue));
+@include generate_theme_color("lilac", var(--color-blue), var(--text-blue));
+@include generate_theme_color("indigo", var(--color-blue), var(--text-blue));
+@include generate_theme_color("teal", var(--color-blue), var(--text-blue));

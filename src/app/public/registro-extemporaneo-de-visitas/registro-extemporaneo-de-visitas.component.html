@@ -1,0 +1,106 @@
+<!-- registro-visita.component.html -->
+<div class="min-h-screen flex flex-col bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="bg-red-700 text-white">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <img src="assets/images/gb2.png" alt="gob.pe" class="h-6" />
+                <span class="text-lg font-medium">Registro de Visitas en Línea</span>
+            </div>
+            <div class="flex items-center gap-2 cursor-pointer">
+                <i class="bi bi-person-fill"></i>
+                <span class="text-sm">Aldo Arzeno</span>
+                <i class="pi pi-angle-down" style="font-size: 0.6rem"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="flex-1 w-full max-w-7xl mx-auto px-6 py-6">
+
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-1 text-sm mb-4">
+            <a href="bienvenida">
+                <i class="bi bi-house-door-fill text-blue-600"></i>
+            </a>
+            <span>/</span>
+            <span style="color: #2f598a;" class="font-medium">Visitas</span>
+        </nav>
+
+        <!-- Título + Botón Nueva Visita -->
+        <div class="flex items-start justify-between mb-2">
+            <div>
+                <h1 class="text-4xl font-bold mb-2">Registro Extemporáneo De Visitas</h1>
+                <p class="text-sm max-w-lg">
+                    Registra la salida de las visitas pendientes y completa los datos o escanea un documento de
+                    identidad para registrar una nueva vista a la entidad.
+                </p>
+            </div>
+            <a href="registro-de-visitas-extemporaneo">
+                <button class="flex items-center gap-2 text-white px-5 py-3 font-medium text-sm whitespace-nowrap"
+                    style="background-color: #2f598a;">
+                    <i class="pi pi-plus" style="font-size: 0.6rem"></i>
+                    Nueva visita
+                </button>
+            </a>
+        </div>
+
+        <!-- Card Últimas Visitas -->
+        <div class="bg-white border border-gray-300 shadow-sm mt-6">
+
+            <!-- Card Header -->
+            <div class="flex items-center justify-between px-6 py-4">
+                <h2 class="text-2xl font-bold">Últimas Visitas</h2>
+                <!-- Buscador -->
+                <div class="relative">
+                    <input type="text" placeholder="Buscar por nombre, dni o entidad"
+                        class="border border-gray-300 rounded-sm px-3 py-1.5 text-sm focus:outline-none focus:ring-1 w-64 pr-8" />
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gray-400 absolute right-2 top-2"
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Visita 1 — Pendiente -->
+            <div class="bg-gray-100 m-1 border-gray-200 pl-12 pr-6 py-4">
+                <p class="font-bold text-sm mb-1">Visita a Espinoza Morales Juan Carlos de DAIS</p>
+                <p class="text-sm mb-1">• Arseno Aldo Manuel - UNIVERSIDAD NACIONAL DE INGENIERÍA</p>
+                <p class="text-sm text-gray-500 mb-3">Miércoles 04 DE Febrero - 14:25</p>
+                <div class="flex items-center justify-between">
+                    <a href="#"
+                        class="text-[#2f598a] text-sm text-blue-600 flex items-center gap-1 transition transform hover:scale-105 duration-200 ease-in-out">
+                        <i class="bi bi-plus-circle-fill"></i>
+                        Agregar más personas a la visita
+                    </a>
+                    <button class="px-4 py-2 border border-gray-300 bg-blue-600 text-sm text-white hover:bg-blue-500">
+                        Registrar salida
+                    </button>
+                </div>
+            </div>
+
+            <!-- Visita 2 — Culminada -->
+            <div class="bg-gray-100 m-1 border-t border-gray-200 pl-12 pr-6 py-4">
+                <div class="flex items-center gap-3 mb-2">
+                    <p class="font-bold text-sm">Visita a Espinoza Morales Juan Carlos de DAIS</p>
+                    <span class="border border-gray-400 text-xs px-2 py-0.5 font-bold rounded-sm">CULMINADA</span>
+                </div>
+                <div class="flex items-center gap-2 text-sm mb-1">
+                    <span>• La Chira Helen Betsy - PRESIDENCIA DE CONSEJO DE MINISTROS - PCM</span>
+                    <i class="bi bi-people-fill text-blue-600"></i>
+                    <span class="text-gray-500 ml-auto">Salió a las 14:52</span>
+                </div>
+                <p class="text-sm text-gray-500">Miércoles 04 DE Febrero - 14:48</p>
+            </div>
+
+        </div>
+        <!-- Fin Card -->
+
+    </div>
+
+    <!-- Footer siempre al fondo -->
+    <footer class="bg-[#26292e] text-white py-5 text-center text-sm font-medium mt-auto">
+        SECRETARÍA DE GOBIERNO Y TRANSFORMACIÓN DIGITAL © 2026
+    </footer>
+</div>

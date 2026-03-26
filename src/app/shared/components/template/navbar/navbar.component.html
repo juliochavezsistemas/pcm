@@ -1,0 +1,47 @@
+<nav class="bg-slate-100 text-gray-700 w-full h-12 flex items-center justify-between px-6 border-b border-gray-300">
+    <!-- IZQUIERDA: TEMPORIZADOR (solo si NO es admin) -->
+    @if (!isAdmin) {
+    <div class="flex flex-col items-start w-64">
+        <span [ngClass]="colorTiempo()" class="font-medium text-sm flex items-center gap-1">
+            <span class="animate-spin-slow inline-block">⏳</span>
+            Sesión expira en: {{ limitTime() }}
+        </span>
+        <div class="w-full bg-gray-300 h-2 rounded-full overflow-hidden mt-1">
+            <div class="h-full transition-all duration-1000 ease-linear" [style.width.%]="porcentajeRestante()"
+                [style.backgroundColor]="colorBarra()">
+            </div>
+        </div>
+    </div>
+    } @else {
+    <!-- Si es Admin, solo deja espacio vacío a la izquierda -->
+    <div class="w-64"></div>
+    }
+
+    <!-- DERECHA: INFORMACIÓN DE USUARIO Y SALIR -->
+    <div class="flex items-center space-x-6">
+        <!-- PERFIL -->
+        <div class="flex items-center space-x-2 hover:text-rose-700 cursor-pointer transition duration-200">
+            <img [src]="'assets/images/no-image.png'" [alt]="'Usuario ' + authMe().nombre_completo"
+                class="w-8 h-8 rounded-full object-cover border border-gray-300" />
+            <div class="flex flex-col">
+                @if (authMe()) {
+                <span class="text-sm font-medium leading-tight">
+                    @if(authMe().rol === 'Entidad'){
+                    {{authMe().razon_social}}
+                    }@else{
+                    {{authMe().nombre_completo}}
+                    }
+                </span>
+                } @else {
+                <span class="animate-pulse text-sm">Cargando...</span>
+                }
+            </div>
+        </div>
+
+        <!-- BOTÓN SALIR -->
+        <button (click)="logout()" class="flex items-center gap-2 text-sm hover:text-rose-600 transition duration-200">
+            <i class="pi pi-power-off"></i>
+            <span>Salir</span>
+        </button>
+    </div>
+</nav>

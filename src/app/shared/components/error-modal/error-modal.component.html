@@ -1,0 +1,27 @@
+@if (visible()) {
+<div class="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+    <div class="bg-white rounded-xl shadow-xl p-6 w-[30em] 
+                max-h-[80vh] overflow-hidden flex flex-col">
+
+        <h2 class="text-xl font-semibold mb-4 text-red-600">
+            Errores detectados
+        </h2>
+
+        <!-- Contenedor scroleable -->
+        <div class="flex-1 overflow-y-auto pr-2">
+            <ul class="list-disc pl-5 space-y-2">
+                @for (item of errores(); track $index) {
+                <li class="text-gray-700">{{ item }}</li>
+                }
+            </ul>
+        </div>
+
+        <div class="flex justify-end mt-5">
+            <button class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700" (click)="onClose()">
+                Cerrar
+            </button>
+        </div>
+
+    </div>
+</div>
+}

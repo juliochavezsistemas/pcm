@@ -1,0 +1,262 @@
+<!-- registro-visitas-lista.component.html -->
+<div class="min-h-screen flex flex-col bg-gray-50 font-sans">
+
+    <!-- Header -->
+    <header class="bg-red-700 text-white">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <img src="assets/images/gb2.png" alt="gob.pe" class="h-6" />
+                <span class="text-lg font-medium">Registro de Visitas en Línea</span>
+            </div>
+            <div class="flex items-center gap-2 cursor-pointer">
+                <i class="bi bi-person-fill"></i>
+                <span class="text-sm">Aldo Arzeno</span>
+                <i class="pi pi-angle-down" style="font-size: 0.6rem"></i>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Main Content -->
+    <div class="flex-1 w-full max-w-xl mx-auto px-6 py-6 items-center">
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 text-sm mb-2">
+            <a href="bienvenida">
+                <i class="bi bi-house-door-fill text-blue-600"></i>
+            </a>
+            <span>/</span>
+            <a href="administrar-sistema">
+                <span class="text-[#2f598a] font-medium text-blue-600">Administración Sistema</span>
+            </a>
+            <span>/</span>
+            <a href="administracion-de-usuarios">
+                <span class="text-[#2f598a] font-medium text-blue-600">Usuarios</span>
+            </a>
+            <span>/</span>
+            <span class="text-[#2f598a] font-medium">Nuevo Usuario</span>
+        </nav>
+
+        <!-- Título -->
+        <h1 class="text-xl font-bold mb-4">
+            NUEVO USUARIO
+        </h1>
+
+        <!-- Formulario -->
+        <div class="max-w-2xl">
+
+            <!-- Tipo documento -->
+            <div class="mb-4 flex flex-row items-center gap-2">
+                <label class="w-44 block text-xs font-medium ">Tipo doc.</label>
+                <div class="w-full">
+                    <div class="relative">
+                        <select
+                            class="w-full bg-white border border-gray-300 rounded-md px-4 py-2 text-gray-500 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent appearance-none cursor-pointer">
+                            <option value="">Seleccionar aquí</option>
+                        </select>
+                        <div
+                            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Documento identidad -->
+            <div class="mb-4 flex flex-row items-center gap-2">
+                <label class="w-44 block text-xs font-medium ">Documento Identidad</label>
+                <input type="text" placeholder="Ejm. 53258478"
+                    class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-600 rounded-md" />
+            </div>
+
+            <!-- Nombres -->
+            <div class="mb-4 flex flex-row items-center gap-2">
+                <label class="w-44 block text-xs font-medium ">Nombres</label>
+                <input type="text" placeholder="María"
+                    class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-600 rounded-md" />
+            </div>
+
+            <!-- Apellido paterno -->
+            <div class="mb-4 flex flex-row items-center gap-2">
+                <label class="w-44 block text-xs font-medium ">Apellido paterno</label>
+                <input type="text" placeholder="Torres"
+                    class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-600 rounded-md" />
+            </div>
+
+            <!-- Apellido materno -->
+            <div class="mb-4 flex flex-row items-center gap-2">
+                <label class="w-44 block text-xs font-medium ">Apellido materno</label>
+                <input type="text" placeholder="Perez"
+                    class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-600 rounded-md" />
+            </div>
+
+            <!-- Sede -->
+            <div class="mb-4 flex flex-row items-center gap-2">
+                <label class="w-44 block text-xs font-medium ">Sede</label>
+                <div class="w-full">
+                    <div class="relative">
+                        <select
+                            class="w-full bg-white border border-gray-300 rounded-md px-4 py-2 text-gray-500 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent appearance-none cursor-pointer">
+                            <option value="">Seleccionar aquí</option>
+                        </select>
+                        <div
+                            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dependencia -->
+            <div class="mb-4 flex flex-row items-center gap-2">
+                <label class="w-44 block text-xs font-medium ">Dependencia</label>
+                <div class="w-full">
+                    <div class="relative">
+                        <select
+                            class="w-full bg-white border border-gray-300 rounded-md px-4 py-2 text-gray-500 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent appearance-none cursor-pointer">
+                            <option value="">Seleccionar aquí</option>
+                        </select>
+                        <div
+                            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cargo -->
+            <div class="mb-4 flex flex-row items-center gap-2">
+                <label class="w-44 block text-xs font-medium ">Cargo</label>
+                <div class="w-full">
+                    <div class="relative">
+                        <select
+                            class="w-full bg-white border border-gray-300 rounded-md px-4 py-2 text-gray-500 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent appearance-none cursor-pointer">
+                            <option value="">Seleccionar aquí</option>
+                        </select>
+                        <div
+                            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Anexo -->
+            <div class="mb-4 flex flex-row items-center gap-2">
+                <label class="w-44 block text-xs font-medium ">Anexo</label>
+                <input type="text" placeholder="584"
+                    class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-600 rounded-md" />
+            </div>
+
+            <!-- Perfil -->
+            <div class="mb-4 flex flex-row items-center gap-2">
+                <label class="w-44 block text-xs font-medium ">Perfil</label>
+                <div class="w-full">
+                    <div class="relative">
+                        <select
+                            class="w-full bg-white border border-gray-300 rounded-md px-4 py-2 text-gray-500 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent appearance-none cursor-pointer">
+                            <option value="">Seleccionar aquí</option>
+                        </select>
+                        <div
+                            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </div>
+                        <!-- Activo -->
+                        <div class="mt-2">
+                            <label class="flex items-center gap-2 text-xs">
+                                <input type="checkbox" checked class="w-3 h-3 accent-blue-600" />
+                                Acceso a aplicativo móvil
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Correo -->
+            <div class="mb-4 flex flex-row items-start gap-2">
+                <label class="w-44 block text-xs font-medium ">Correo</label>
+                <div class="w-full flex flex-col items-start">
+                    <input type="text" placeholder="mtorres@pcm.gob.pe"
+                        class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-600" />
+                    <div class="text-right text-xs text-gray-500 mt-1">Serás notificado a esta dirección de correo</div>
+                    <div class="mt-2">
+                        <label class="flex items-center gap-2 text-xs">
+                            <input type="checkbox" checked class="w-3 h-3 accent-blue-600" />
+                            Operador / punto control
+                        </label>
+                        <label class="flex items-center gap-2 text-xs">
+                            <input type="checkbox" checked class="w-3 h-3 accent-blue-600" />
+                            Operador / Registro de visitas
+                        </label>
+                        <label class="flex items-center gap-2 text-xs">
+                            <input type="checkbox" checked class="w-3 h-3 accent-blue-600" />
+                            Administrador de plataforma
+                        </label>
+                        <label class="flex items-center gap-2 text-xs">
+                            <input type="checkbox" checked class="w-3 h-3 accent-blue-600" />
+                            Unidad de organización
+                        </label>
+                        <label class="flex items-center gap-2 text-xs">
+                            <input type="checkbox" checked class="w-3 h-3 accent-blue-600" />
+                            Operador / Programación de visitas
+                        </label>
+                        <label class="flex items-center gap-2 text-xs">
+                            <input type="checkbox" checked class="w-3 h-3 accent-blue-600" />
+                            Operador / Responsable de agenda oficial
+                        </label>
+                        <label class="flex items-center gap-2 text-xs">
+                            <input type="checkbox" checked class="w-3 h-3 accent-blue-600" />
+                            Habilitación Alta dirección / Agenda oficial
+                        </label>
+                        <label class="flex items-center gap-2 text-xs">
+                            <input type="checkbox" checked class="w-3 h-3 accent-blue-600" />
+                            Activo
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- Botones -->
+        <div class="flex justify-center gap-2 mt-6">
+            <a href="administracion-de-usuarios">
+                <button
+                    class="px-6 py-2 bg-[#e2f1f8] text-sm border border-gray-300 text-gray-700 font-medium transition transform hover:scale-105 duration-200 ease-in-out">
+                    CERRAR
+                </button>
+            </a>
+            <button
+                class="px-6 py-2 bg-[#2f598a] text-white text-sm font-medium hover:bg-blue-700 transition flex items-center gap-2 transition transform hover:scale-105 duration-200 ease-in-out">
+                <i class="bi bi-lock-fill text-xs"></i>
+                GUARDAR
+            </button>
+        </div>
+
+    </div>
+
+    <!-- Footer siempre al fondo -->
+    <footer class="bg-[#26292e] text-white py-5 text-center text-sm font-medium mt-auto">
+        SECRETARÍA DE GOBIERNO Y TRANSFORMACIÓN DIGITAL © 2026
+    </footer>
+
+</div>

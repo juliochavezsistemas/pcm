@@ -1,0 +1,165 @@
+<div class="flex flex-col gap-3">
+    <div class="flex flex-row gap-2">
+        @if (showButtonAddOrUpdate()) {
+        <p-button icon="pi pi-plus" label="AGREGAR REGISTRO" (onClick)="addOrUpdateRegister()" />
+        }
+        @if (showDownAndUpButton()) {
+        <input type="file"
+            [accept]="'.csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel'"
+            (change)="uploadFormat($event)" style="display: none;" #fileUpload>
+        <button type="button" class="item-button-action" (click)="upload()" pTooltip="Subir formato" placeholder="Top"
+            tooltipPosition="top">
+            <i class="bi bi-upload"></i>
+        </button>
+
+        <button type="button" class="item-button-action" (click)="downloadFormatFile()" pTooltip="Descargar formato"
+            tooltipPosition="top">
+            <i class="bi bi-box-arrow-in-down"></i>
+        </button>
+        }
+    </div>
+    @if(showFilter()){
+    <form [formGroup]="formGroup()" class="flex flex-col lg:flex-row gap-4 w-full items-end">
+        <div class="w-full lg:w-[70%] flex-grow">
+            <p-floatLabel variant="on">
+                <input pInputText id="searchValue" autocomplete="off" formControlName="searchValue" class="w-full" />
+                <label for="searchValue">Término de búsqueda</label>
+            </p-floatLabel>
+        </div>
+        <div class="w-full lg:w-auto flex flex-col sm:flex-row gap-2 items-stretch">
+            <div class="flex-grow">
+                <p-button icon="pi pi-filter-slash" label="Limpiar" severity="secondary" (onClick)="cleanInputs()"
+                    styleClass="w-full h-full">
+                </p-button>
+            </div>
+        </div>
+    </form>
+    }
+    <p-table class="tabla-naranja" [value]="value()" [columns]="columns()" stripedRows
+        [tableStyle]="{'min-width': '50rem'}" [customSort]="true" [resetPageOnSort]="false" lazy="true" size="small"
+        (onSort)="onSortChange($event)">
+        <ng-template #header let-columns>
+            <tr>
+                @for (column of columns; track $index) {
+                @if (column.sort) {
+                <th [style.text-align]=column.align pSortableColumn="{{column.name}}" [style.width]=column.width>
+                    {{column.label}}
+                    <p-sortIcon field="{{column.name}}" />
+                </th>
+                }@else {
+                <th [style.text-align]=column.align [style.width]=column.width>
+                    {{column.label}}
+                </th>
+                }
+                }
+            </tr>
+        </ng-template>
+        <ng-template #body let-i="rowIndex" let-rowData let-columns="columns">
+            <tr>
+                @for (column of columns; track $index) {
+                @if (column.name === 'actions') {
+                <td [style.text-align]=column.align [style.width]=column.width>
+                    <div class="flex flex-row gap-2 justify-center align-middle">
+
+                        @if (showButtonAsignarAbogadosComponente() && rowData['abogado']===1) {
+                        <button (click)="agregarAbogadosExpediente(rowData['id'])">
+                            <i [class]="iconAsignarAbogadosComponente()"
+                                [style.color]="iconColorButtonAsignarAbogadosComponente()"
+                                [pTooltip]="toolTipAsignarAbogadosComponente()"></i>
+                        </button>
+                        }
+                        @if (showButtonCambiarEstadoExpedienteComponente() && rowData['abogado']===1) {
+                        <button (click)="cambiarEstadoExpediente(rowData['id'])">
+                            <i [class]="iconCambiarEstadoExpedienteComponente()"
+                                [style.color]="iconColorButtonCambiarEstadoExpedienteComponente()"
+                                [pTooltip]="toolTipCambiarEstadoExpedienteComponente()"></i>
+                        </button>
+                        }
+                        @if (showButtonAgregarEscritoComponente() && rowData['escrito']===1) {
+                        <button (click)="agregarEscritoExpediente(rowData['id'])">
+                            <i [class]="iconAgregarEscritoComponente()"
+                                [style.color]="iconColorButtonAgregarEscritoComponente()"
+                                [pTooltip]="toolTipAgregarEscritoComponente()"></i>
+                        </button>
+                        }
+                        @if (showButtonVerMovimientoComponente()) {
+                        <button (click)="movimientos(rowData['id'])">
+                            <i [class]="iconAddVerMovimientoComponente()"
+                                [style.color]="iconColorButtonVerMovimientoComponente()"
+                                [pTooltip]="toolTipVerMovimientoComponente()"></i>
+                        </button>
+                        }
+                        @if(showButtonDetail()){
+                        <button (click)="details(rowData['id'])">
+                            <i class="bi bi-info-circle" [style.color]="iconColorButtonDetail()"
+                                [pTooltip]="toolTipDetailName()"></i>
+                        </button>
+                        }
+                        @if (showButtonEdit()) {
+                        <button (click)="addOrUpdateRegister(rowData['id'])">
+                            <i [class]="iconEditComponent()" [style.color]="iconColorButtonEdit()"
+                                [pTooltip]="toolTipEditName()"></i>
+                        </button>
+                        }
+
+                        @if(rowData['eliminar']){
+                        @if (showButtonDelete() && rowData['eliminar']===1) {
+                        <button (click)="deleteRegister(rowData['id'])">
+                            <i [class]="iconDeleteComponent()" [style.color]="iconColorButtonDelete()"
+                                [pTooltip]="toolTipDeleteName()" placeholder="Left"></i>
+                        </button>
+                        }
+                        }@else {
+                        @if (showButtonDelete()) {
+                        <button (click)="deleteRegister(rowData['id'])">
+                            <i [class]="iconDeleteComponent()" [style.color]="iconColorButtonDelete()"
+                                [pTooltip]="toolTipDeleteName()" placeholder="Left"></i>
+                        </button>
+                        }
+                        }
+
+                    </div>
+                </td>
+                }
+                @else if (column.name==='activo') {
+                <td [style.text-align]=column.align [style.width]=column.width>
+                    @if (rowData[column.name]==='1') {
+                    <p-tag value="Si" severity="success" />
+                    }@else {
+                    <p-tag value="No" severity="danger" />
+                    }
+                </td>
+                }
+                @else {
+                <td [style.text-align]=column.align [style.width]=column.width>
+                    @if (column.template) {
+                    <ng-container *ngTemplateOutlet="column.template; context: { $implicit: rowData }" />
+                    }
+                    @else if (column.html) {
+                    <span [innerHTML]="column.html(rowData)"></span>
+                    }
+                    @else if (column.combine) {
+                    {{ column.combine(rowData) }}
+                    }
+                    @else {
+                    {{ column.name==='id' ? ((first() / rows()) * rows() + 1 + i) : rowData[column.name] }}
+                    }
+                </td>
+                }
+                }
+            </tr>
+        </ng-template>
+        @if (value().length === 0) {
+        <ng-template #footer>
+            <tr>
+                <td [attr.colspan]="columns().length">
+                    <p class="text-center">Sin registros</p>
+                </td>
+            </tr>
+        </ng-template>
+        }
+    </p-table>
+    <p-paginator [first]="first()" [rows]="rows()" [totalRecords]="totalRecords()" (onPageChange)="onPageChange($event)"
+        [rowsPerPageOptions]="rowsPerPageOptions()" />
+</div>
+<lib-toastify-toast-container></lib-toastify-toast-container>

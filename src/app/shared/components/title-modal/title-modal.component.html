@@ -1,0 +1,17 @@
+@if (isFullNameLoaded()) {
+<p class="text-gray-700 text-sm md:text-base flex flex-row gap-1">
+    <span class="font-medium text-gray-600">{{title()}}:</span>
+    <span class="font-semibold text-gray-800">{{detail()}}</span>
+</p>
+} @else {
+<p class="text-gray-700 text-sm md:text-base flex flex-row gap-1">
+    <span class="font-medium text-gray-600">{{title()}}:</span>
+    <span class="font-semibold text-gray-800">Cargando nombre del evento...</span>
+</p>
+}
+
+<!-- 
+<p class="text-gray-700 text-sm md:text-base flex flex-row gap-1">
+    <span class="font-medium text-gray-600">{{title()}}:</span>
+    <span class="font-semibold text-gray-800">{{detail()}}</span>
+</p> -->

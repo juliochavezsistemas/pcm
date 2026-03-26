@@ -1,0 +1,128 @@
+<!-- registro-visitas-lista.component.html -->
+<div class="min-h-screen flex flex-col bg-gray-50 font-sans">
+
+    <!-- Header -->
+    <header class="bg-red-700 text-white">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <img src="assets/images/gb2.png" alt="gob.pe" class="h-6" />
+                <span class="text-lg font-medium">Registro de Visitas en Línea</span>
+            </div>
+            <div class="flex items-center gap-2 cursor-pointer">
+                <i class="bi bi-person-fill"></i>
+                <span class="text-sm">Aldo Arzeno</span>
+                <i class="pi pi-angle-down" style="font-size: 0.6rem"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="flex-1 w-full max-w-7xl mx-auto px-6 py-6">
+
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 text-sm mb-4">
+            <a href="bienvenida">
+                <i class="bi bi-house-door-fill text-blue-600"></i>
+            </a>
+            <span>/</span>
+            <a href="administrar-sistema">
+                <span class="text-[#2f598a] font-medium">Administración Sistema</span>
+            </a>
+            <span>/</span>
+            <span class="text-[#2f598a] font-medium">Usuarios</span>
+        </nav>
+
+        <!-- Título -->
+        <h1 class="text-2xl font-bold mb-4">Opciones de búsqueda</h1>
+
+        <!-- Filtros -->
+        <div class="flex items-center gap-4 mb-4">
+
+            <!-- Input búsqueda -->
+            <div class="relative flex-1">
+                <input type="text" placeholder="Buscar por nombre, dni o entidad"
+                    class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-[#2f598a]" />
+                <i class="bi bi-search absolute right-3 top-2.5 text-gray-400"></i>
+            </div>
+
+            <!-- Rango fecha -->
+            <input type="text" value="05/02/2026 - 05/02/2026"
+                class="border border-gray-300 px-3 py-2 text-sm w-56 focus:outline-none focus:ring-1 focus:ring-[#2f598a]" />
+
+            <!-- Botón buscar -->
+            <button class="bg-[#2f598a] text-white px-6 py-2 text-sm font-medium hover:bg-blue-700 transition">
+                <i class="bi bi-search mr-1"></i> Buscar
+            </button>
+        </div>
+
+        <!-- Línea roja -->
+        <div class="border-t-2 border-red-600 mb-4"></div>
+
+
+        <!-- Input búsqueda -->
+        <div class="flex flex-row justify-end py-2">
+
+            <!-- Botones exportación -->
+            <div class="flex gap-2">
+                <button class="border px-3 py-1 text-xs bg-gray-100 hover:bg-gray-200">PDF</button>
+                <button class="border px-3 py-1 text-xs bg-gray-100 hover:bg-gray-200">Excel</button>
+            </div>
+
+        </div>
+
+
+        <!-- Tabla -->
+        <div class="overflow-x-auto border">
+
+            <table class="min-w-full text-xs text-left border-collapse">
+
+                <!-- Header -->
+                <thead class="bg-gray-100">
+                    <tr>
+                        <th class="border px-2 py-2">Fecha</th>
+                        <th class="border px-2 py-2">Administrador</th>
+                        <th class="border px-2 py-2">DNI</th>
+                        <th class="border px-2 py-2">Día sin visita</th>
+                        <th class="border px-2 py-2">Sede</th>
+                        <th class="border px-2 py-2">Observación</th>
+                        <th class="border px-2 py-2">Edición</th>
+                        <th class="border px-2 py-2">Eliminar</th>
+                        <th class="border px-2 py-2">Editar</th>
+                    </tr>
+                </thead>
+
+                <!-- Body -->
+                <tbody>
+                    <tr>
+                        <td colspan="20" class="text-center py-6 text-gray-500">
+                            No hay datos disponibles
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+
+        <!-- Footer tabla -->
+        <div class="flex justify-between items-center text-xs mt-2 text-gray-600">
+            <span>Mostrando 1 de 10 de 134 registros</span>
+
+            <div class="flex items-center gap-2">
+                <span>Anterior</span>
+                <span class="font-bold">1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>...</span>
+                <span>35</span>
+                <span>Siguiente</span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer siempre al fondo -->
+    <footer class="bg-[#26292e] text-white py-5 text-center text-sm font-medium mt-auto">
+        SECRETARÍA DE GOBIERNO Y TRANSFORMACIÓN DIGITAL © 2026
+    </footer>
+
+</div>

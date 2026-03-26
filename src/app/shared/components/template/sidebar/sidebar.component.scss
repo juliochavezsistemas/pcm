@@ -1,0 +1,39 @@
+.sidebar {
+  @apply fixed md:sticky top-0 left-0 h-full w-64 bg-[var(--background-color)] text-[var(--text-input)] z-50 
+         transform transition-transform duration-300 ease-in-out
+         overflow-y-auto md:shadow-none flex flex-col;
+  &--visible {
+    @apply translate-x-0 shadow-xl;
+  }
+  &--hidden {
+    @apply -translate-x-full md:translate-x-0;
+  }
+}
+// Estilos para los items del menú
+.sidebar-item {
+  @apply block hover:bg-[var(--primary)] p-3 rounded-lg font-semibold tracking-wide 
+         transition transform hover:scale-105 mx-3;
+  &-icon {
+    @apply text-xl group-hover:scale-110 transition-transform;
+  }
+}
+.sidebar-header {
+  @apply p-4 border-b border-[var(--primary)];
+}
+.sidebar-footer {
+  @apply p-4 border-t border-[var(--primary)] text-sm text-center;
+}
+
+.menu-navigation {
+  @apply flex-1 py-4 border-r border-r-[var(--primary)];
+}
+
+::ng-deep .p-panelmenu .p-panelmenu-item-link-active {
+  color: var(--primary) !important;
+  font-weight: bold;
+  border-left: 4px solid var(--primary);
+}
+
+::ng-deep .p-panelmenu .p-panelmenu-item-link-active .pi {
+  color: var(--primary) !important;
+}

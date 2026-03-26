@@ -1,0 +1,21 @@
+<header class="bg-[var(--primary)]  w-full h-10 flex items-center justify-between px-6 shadow-lg">
+  <div class=" font-bold tracking-wide text-[var(--background-color)]">Centro para el Desarrollo de Arbitraje y
+    Conciliación</div>
+  <button (click)="onClick.emit()" aria-label="Toggle menu" class="md:hidden p-2 rounded-md hover:bg-gray-100">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+    </svg>
+  </button>
+  <div class="hidden md:flex space-x-6 text-sm font-medium text-[var(--background-color)]">
+    @if(authMe()) {
+    <span>
+      👤{{authMe().rol }}
+    </span>
+    }
+    @else {
+    <span>
+      <span class="animate-pulse">Cargando información...</span>
+    </span>
+    }
+  </div>
+</header>

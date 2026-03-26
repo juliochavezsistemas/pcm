@@ -1,0 +1,23 @@
+<aside [class.sidebar--visible]="sidebarVisible()" [class.sidebar--hidden]="!sidebarVisible()" class="sidebar"
+  aria-label="Menú de navegación principal" role="navigation">
+  <!-- Logo o encabezado del sidebar -->
+  <div class="sidebar-header">
+    <div class="flex flex-col items-center gap-3 justify-center">
+      <img src="assets/images/logo.png" alt="Usuario" class="h-8">
+      <!-- <h2 class="text-xl font-bold">ANARB</h2> -->
+    </div>
+  </div>
+  <!-- Menú de navegación -->
+  @if (visibleItems().length>1) {
+  <nav class="menu-navigation">
+    <p-panelmenu [model]="visibleItems()" styleClass="w-full p-2" />
+  </nav>
+  }@else {
+  <span class="animate-pulse text-center">Cargando información...</span>
+  }
+  <!-- Pie del sidebar-->
+  <div class="sidebar-footer">
+    <p class="text-center">
+      Versión 1.0.0</p>
+  </div>
+</aside>

@@ -1,0 +1,154 @@
+<!-- registro-visitas-lista.component.html -->
+<div class="min-h-screen flex flex-col bg-gray-50 font-sans">
+
+    <!-- Header -->
+    <header class="bg-red-700 text-white">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <img src="assets/images/gb2.png" alt="gob.pe" class="h-6" />
+                <span class="text-lg font-medium">Registro de Visitas en Línea</span>
+            </div>
+            <div class="flex items-center gap-2 cursor-pointer">
+                <i class="bi bi-person-fill"></i>
+                <span class="text-sm">Aldo Arzeno</span>
+                <i class="pi pi-angle-down" style="font-size: 0.6rem"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner informativo -->
+    <div class="bg-green-700 text-white text-sm px-8 py-4 relative">
+        <!-- Contenido principal con icono de información a la izquierda -->
+        <div class="flex items-start gap-3 pr-8">
+            <!-- Icono de información (reloj/i) -->
+            <i class="pi pi-info-circle text-xl mt-0.5 flex-shrink-0"></i>
+
+            <!-- Texto -->
+            <p class="leading-relaxed">
+                A partir de 28 de mayo del 2023, se contará con una nueva funcionalidad para el registro extemporáneo de
+                visitas,
+                la cual permitirá que las entidades puedan registrar la información del día anterior que no hubieran
+                podido
+                consignar en la plataforma oportunamente. Tener en cuenta: Cuando la información no consignada
+                corresponde
+                a una visita más antigua deberá solicitarse la autorización correspondiente a la Secretaría Integridad
+                Pública.
+                <a href="#" class="underline">Descargar guía.</a>
+            </p>
+        </div>
+
+        <!-- Botón de cierre (X) en la esquina superior derecha -->
+        <button class="absolute right-4 top-4 text-white hover:text-red-200 transition-colors">
+            <i class="pi pi-times text-xl"></i>
+        </button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-1 max-w-7xl mx-auto px-6 py-10 w-full">
+
+        <h1 class="text-4xl font-bold text-gray-900 text-center mb-10">
+            Bienvenido a la Plataforma de Gestión de Visitas
+        </h1>
+
+        <!-- Grid de cards fila 1 — usando CSS grid inline para garantizar 4 columnas -->
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 1rem;">
+
+            <!-- Card: Registro de Visitas -->
+            <div class="bg-white border border-gray-200 flex flex-col">
+                <div class="text-blue-600 px-5 pt-5 pb-4 flex-1">
+                    <p class="text-sm mb-1">Registro de</p>
+                    <p class="text-3xl font-bold">Visitas</p>
+                </div>
+                <div class="flex flex-col bg-gray-200 border-t border-gray-200 px-5 py-2 items-center">
+                    <a href="registro-de-visitas" class="text-sm text-blue-600  flex items-center gap-1">
+                        Administrar
+                        <i class="bi bi-plus-circle-fill"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card: Registro Extemporáneo de Visitas -->
+            <div class="bg-white border border-gray-200 flex flex-col">
+                <div class="text-blue-600 px-5 pt-5 pb-4 flex-1">
+                    <p class="text-sm mb-1">Registro extemporáneo</p>
+                    <p class="text-3xl font-bold">Visitas</p>
+                </div>
+                <div class="flex flex-col bg-gray-200 border-t border-gray-200 px-5 py-2 items-center">
+                    <a href="registro-extemporaneo-de-visitas" class="text-sm text-blue-600  flex items-center gap-1">
+                        Administrar
+                        <i class="bi bi-plus-circle-fill"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card: Punto de Control -->
+            <div class="bg-white border border-gray-200 flex flex-col">
+                <div class="text-blue-600 px-5 pt-5 pb-4 flex-1">
+                    <p class="text-sm mb-1">Punto de</p>
+                    <p class="text-3xl font-bold">Control</p>
+                </div>
+                <div class="flex flex-col bg-gray-200 border-t border-gray-200 px-5 py-2 items-center">
+                    <a href="#" class="text-sm text-blue-600  flex items-center gap-1">
+                        Administrar
+                        <i class="bi bi-plus-circle-fill"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card: Gestión de Reportes -->
+            <div class="bg-white border border-gray-200 flex flex-col">
+                <div class="text-blue-600 px-5 pt-5 pb-4 flex-1">
+                    <p class="text-sm mb-1">Gestión de</p>
+                    <p class="text-3xl font-bold">Reportes</p>
+                </div>
+                <div class="flex flex-col bg-gray-200 border-t border-gray-200 px-5 py-2 items-center">
+                    <a href="reporte-de-visitas" class="text-sm text-blue-600  flex items-center gap-1">
+                        Administrar
+                        <i class="bi bi-plus-circle-fill"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Grid de cards fila 2 — usando CSS grid inline para garantizar 4 columnas -->
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;">
+
+            <!-- Card: Agendas Oficiales -->
+            <div class="bg-white border border-gray-200 flex flex-col">
+                <div class="text-blue-600 px-5 pt-5 pb-4 flex-1">
+                    <p class="text-sm mb-1">Agendas</p>
+                    <p class="text-3xl font-bold">Oficiales</p>
+                </div>
+                <div class="flex flex-col bg-gray-200 border-t border-gray-200 px-5 py-2 items-center">
+                    <a href="agenda-oficial" class="text-sm text-blue-600  flex items-center gap-1">
+                        Administrar
+                        <i class="bi bi-plus-circle-fill"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card: Administración Sistema -->
+            <div class="bg-white border border-gray-200 flex flex-col">
+                <div class="text-blue-600 px-5 pt-5 pb-4 flex-1">
+                    <p class="text-sm mb-1">Administración</p>
+                    <p class="text-3xl font-bold">Sistema</p>
+                </div>
+                <div class="flex flex-col bg-gray-200 border-t border-gray-200 px-5 py-2 items-center">
+                    <a href="administrar-sistema" class="text-sm text-blue-600  flex items-center gap-1">
+                        Administrar
+                        <i class="bi bi-plus-circle-fill"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Footer siempre al fondo -->
+    <footer style="background-color: #26292e;" class="text-white py-5 text-center text-sm font-medium mt-auto">
+        SECRETARÍA DE GOBIERNO Y TRANSFORMACIÓN DIGITAL © 2026
+    </footer>
+
+</div>
